@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--  <link rel="stylesheet" th:href="@{css/demo.css}"/>-->
+</head>
+<body>
+<br><br>
+<form th:action="@{/processFromJavaObject}" method="post" th:object="${employee}">
+
+    First Name<input type="text" th:field="*{FirsName}" placeholder="First Name"/>
+    <br><br>
+    Last Name<input type="text" th:field="*{LastName}" placeholder="Last Name"/>
+    <br><br>
+    Country<select  th:field="*{Conuntry}">
+        <option value = "India">India</option>
+        <option value = "USA">USA</option>
+        <option value = "UK">UK</option>
+        <option value = "Australia">Australia</option>
+</select>
+    <br><br>
+    <input type="radio" th:field="*{favoritLaunguage}" value="Java">Java</input>
+    <input type="radio" th:field="*{favoritLaunguage}" value="Kotlin">Kotlin</input>
+    <input type="radio" th:field="*{favoritLaunguage}" value="Python">Python</input>
+    <br><br>
+    <input type="checkbox" th:field="*{favoriteSystem}" th:value="Linux">Linux</input>
+    <input type="checkbox" th:field="*{favoriteSystem}" th:value="macOS">macOS</input>
+    <input type="checkbox" th:field="*{favoriteSystem}" th:value="Windows">Windows</input>
+    <br><br>
+    <input type="submit" value="Submit"/>
+    <br><br>
+    <input type="reset" value="Reset"/>
+
+
+</form>
+
+</body>
+</html>
